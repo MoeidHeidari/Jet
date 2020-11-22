@@ -1,0 +1,3 @@
+/home/andromeda/Documents/Jet/bin/JET
+/home/andromeda/Documents/Jet/lib/libAssertion.a
+/home/andromeda/Documents/Jet/include/jet_assertion.h

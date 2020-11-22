@@ -1,0 +1,2 @@
+/usr/bin/ar qc libAssertion.a  CMakeFiles/Assertion.dir/jet_assertion.cpp.o
+/usr/bin/ranlib libAssertion.a

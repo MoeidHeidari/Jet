@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -O3  -rdynamic CMakeFiles/JET.dir/main.cpp.o  -o JET  Foundations/Assertion/libAssertion.a 

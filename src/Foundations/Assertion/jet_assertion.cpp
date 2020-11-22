@@ -4,7 +4,7 @@
  * @Email:  moeidheidari@hotmail.com
  * @Project: JET
  * @Last modified by:   MOEIDHEIDARI
- * @Last modified time: 2020-11-22T20:41:15+03:00
+ * @Last modified time: 2020-11-22T22:33:59+03:00
  * @License: MIT License
 
 Copyright (c) 2020 Moeid Heidari
@@ -30,9 +30,12 @@ SOFTWARE.
  */
 
 #include "jet_assertion.h"
-#include "../include/Foundations/op_assertation.h"
 
-void OP::set_assertation_handler(OP::assert_function_handler handler)
+void JET::set_assertation_handler(JET::assert_function_handler handler)
+{
+  //JET_PRIVATE::handler=handler;
+}
+void JET::set_default_assertation_handler()
 {
 
 }

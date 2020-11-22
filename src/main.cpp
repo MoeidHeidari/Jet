@@ -4,7 +4,7 @@
  * @Email:  moeidheidari@hotmail.com
  * @Project: JET
  * @Last modified by:   MOEIDHEIDARI
- * @Last modified time: 2020-11-22T20:19:04+03:00
+ * @Last modified time: 2020-11-22T22:37:24+03:00
  * @License: MIT License
 
 Copyright (c) 2020 Moeid Heidari
@@ -28,3 +28,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  * @Copyright: Copyright (c) 2020 Moeid Heidari
  */
+ #include <iostream>
+#include "jet_assertion.h"
+void assertion_handler(const char* fileName,int line, const char* message) noexcept
+{
+  (void) fileName;
+  (void) line;
+  (void) message;
+  std::fprintf(stderr,"%s:%d: %s\n",__FILE__,__LINE__,message);
+  std::abort();
+}
+ int main()
+ {
+   int x=5;
+   JET_PRIVATE::handler=assertion_handler;
+   //throw JET::JET_code_error("moeid said an error has occured");
+   JET_ASSERT(x==6,"error accured hahahahhaa");
+   return 0;
+ }

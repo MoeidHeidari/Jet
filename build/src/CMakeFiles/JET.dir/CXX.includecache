@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/jet_assertion.h
+functional
+-
+stdexcept
+-
+
+/home/andromeda/Documents/Jet/src/main.cpp
+iostream
+-
+jet_assertion.h
+/home/andromeda/Documents/Jet/src/jet_assertion.h
+

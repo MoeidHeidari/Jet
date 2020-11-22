@@ -44,6 +44,7 @@ SOFTWARE.
  	*/
  	typedef std::function<void(const char* fileName,int line, const char* message)> assert_function_handler;
 
+  void default_assert_handler(const char* fileName,int line, const char* message) noexcept;
  	/*! /brief ithis function sets a function to the handler either by parameter of default
  		author : Moeid Heidari
  	*/
