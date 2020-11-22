@@ -30,3 +30,9 @@ SOFTWARE.
  */
 
 #include "jet_assertion.h"
+#include "../include/Foundations/op_assertation.h"
+
+void OP::set_assertation_handler(OP::assert_function_handler handler)
+{
+
+}
