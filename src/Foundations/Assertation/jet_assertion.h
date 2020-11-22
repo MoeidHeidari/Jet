@@ -29,4 +29,55 @@ SOFTWARE.
  * @Copyright: Copyright (c) 2020 Moeid Heidari
  */
 
-#pragma once
+ #pragma once
+ #ifndef _OP_ASSERTATION
+ #define _OP_ASSERTATION
+
+ #include <functional>
+ #include <stdexcept>
+
+ //======================================================================================================
+ namespace OP
+ {
+ 	/*! /brief a function handler to handle assertation function
+ 	* author : Moeid Heidari.
+ 	*/
+ 	typedef std::function<void(const char* fileName,int line, const char* message)> assert_function_handler;
+
+ 	/*! /brief ithis function sets a function to the handler either by parameter of default
+ 		author : Moeid Heidari
+ 	*/
+ 	void set_assertation_handler(assert_function_handler handler);
+ 	void set_default_assertation_handler();
+ 	//-------------------------------------------------------------------------------------------------
+ 	class OP_unicode_error : public std::runtime_error
+ 	{
+ 	public:
+ 		explicit OP_unicode_error(const char* message) noexcept :std::runtime_error(message) {}
+ 	};
+ 	//-------------------------------------------------------------------------------------------------
+ 	class OP_code_error : public std::runtime_error
+ 	{
+ 	public:
+ 		explicit OP_code_error(const char* message) noexcept : std::runtime_error(message) {}
+ 	};
+ 	//-------------------------------------------------------------------------------------------------
+ 	class OP_invalid_argument : public std::invalid_argument
+ 	{
+ 	public:
+ 		explicit OP_invalid_argument(const char* message) noexcept :std::invalid_argument(message) {}
+ 	};
+ }
+ //======================================================================================================
+ namespace OP_PRIVATE
+ {
+ 	 OP::assert_function_handler handler;
+ }
+ //======================================================================================================
+ #define OP_ASSERT(condition,message)\
+ 	do{\
+ 		if (!(condition))\
+ 			OP_PRIVATE::handler( __FILE__, __LINE__, message); \
+ 	}while(0)
+
+ #endif
